@@ -9,7 +9,8 @@ function fetcher(url) {
 }
 
 export default function HomePage() {
-  const { data } = useSWR(URL, fetcher);
+  const { data, isLoading } = useSWR(URL, fetcher);
+  if (isLoading) return <div>loading...</div>;
   console.log(data);
 
   return (
