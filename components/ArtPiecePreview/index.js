@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-export default function ArtPiecePreview({ image, title, artist }) {
+export default function ArtPiecePreview({ image, title, artist, data }) {
   return (
     <>
       {" "}

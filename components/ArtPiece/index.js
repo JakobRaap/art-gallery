@@ -1,6 +1,7 @@
 import { useSWRConfig } from "swr";
 import ArtPiecePreview from "../ArtPiecePreview";
 import useSWR from "swr";
+import Link from "next/link";
 
 const URL = "https://example-apis.vercel.app/api/art";
 
@@ -13,11 +14,14 @@ export default function ArtPiece() {
     <ul>
       {data.map((piece) => (
         <li key={piece.slug}>
-          <ArtPiecePreview
-            image={piece.imageSource}
-            title={piece.name}
-            artist={piece.artist}
-          ></ArtPiecePreview>
+          <Link href={`/art-pieces/${piece.slug}`}>
+            <ArtPiecePreview
+              image={piece.imageSource}
+              title={piece.name}
+              artist={piece.artist}
+              data={data}
+            ></ArtPiecePreview>
+          </Link>
         </li>
       ))}
     </ul>
