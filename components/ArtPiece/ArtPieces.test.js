@@ -1,4 +1,4 @@
-import ArtPieces from "../../pages/ArtPieces";
+import ArtPieces from ".";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
